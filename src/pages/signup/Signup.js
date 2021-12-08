@@ -3,21 +3,21 @@ import styles from './Signup.module.css';
 import { useSignup } from '../../hooks/useSignup';
 
 export default function Signup() {
-    const [username, setUsername] = useState('');
+    const [displayName, setDisplayName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { signup, isPending, error } = useSignup()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        signup(email, password, username)
+        signup(email, password, displayName)
     }
 
     return (
         <form onSubmit={handleSubmit} className={styles['signup-form']}>
             <h2>Sign Up</h2>
             <label>
-                <span>email:</span>
+                <span>Email:</span>
                 <input
                 type="email"
                 onChange={(e) => setEmail(e.target.value)}
@@ -25,7 +25,7 @@ export default function Signup() {
                 />
             </label>
             <label>
-                <span>password:</span>
+                <span>Password:</span>
                 <input
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}
@@ -33,11 +33,11 @@ export default function Signup() {
                 />
             </label>
             <label>
-                <span>username:</span>
+                <span>Username:</span>
                 <input
                 type="text"
-                onChange={(e) => setUsername(e.target.value)}
-                value={username}
+                onChange={(e) => setDisplayName(e.target.value)}
+                value={displayName}
                 />
             </label>
             {!isPending && <button className="btn">Signup</button>}
