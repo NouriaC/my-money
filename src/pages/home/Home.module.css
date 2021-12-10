@@ -68,6 +68,10 @@
   overflow: hidden;
   border-left: 4px solid #1f9751;
 }
+.transactions li.total {
+  background: #1f9751;
+  border-left: 4px solid #777;
+}
 .transactions .name {
   color: #777;
   font-size: 1.4em;
@@ -79,6 +83,7 @@
   font-weight: bold;
   font-size: 1.6em;
 }
+
 .transactions button {
   position: absolute;
   top: 0;
